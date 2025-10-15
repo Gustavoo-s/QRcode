@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de QR Code</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerador de QR Code</h1>
+
+    <input type="text" id="url" placeholder="Digite ou cole a URL aqui">
+    <div class="buttons">
+      <button onclick="gerarQRCode()">Gerar</button>
+      <button id="downloadBtn" onclick="baixarQRCode()" disabled>Baixar</button>
+    </div>
+
+    <div id="qrcode"></div>
+    <p class="footer">Developed by GS.Tech 🚀</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
