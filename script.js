@@ -10,6 +10,11 @@ function gerarQRCode() {
     return;
   }
 
+  if (!isValidURL(url)) {
+    alert("URL inválida! Digite uma URL válida (ex: https://exemplo.com)");
+    return;
+  }
+
   ultimoQRCode = new QRCode(container, {
     text: url,
     width: 200,
@@ -37,4 +42,14 @@ function baixarQRCode() {
   link.href = dataUrl;
   link.download = "qrcode.png";
   link.click();
+}
+
+
+function isValidURL(string) {
+  try {
+    const url = new URL(string);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch (_) {
+    return false;
+  }
 }
